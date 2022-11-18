@@ -1,12 +1,15 @@
 import pokemon from './Pokemon'
 import Pokecard from './Pokecard'
 
-const Pokedex = () => {
+const Pokedex = (props) => {
     return (
-        <div>
-            {pokemon.map(p => (
-                <Pokecard key={p.id} name={p.name} image="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.id}.png." type={p.type} exp={p.base_experience}/>
-            ))}
+        <div className="Pokedex">
+            <h2 className="Pokedex-title">Pokedex</h2>
+            <div className='Pokedex-cards'>
+                {pokemon.map(p => (
+                    <Pokecard id={p.id} name={p.name} type={p.type} exp={p.base_experience}/>
+                ))}
+            </div>
         </div>
     )
 }
